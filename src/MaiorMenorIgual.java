@@ -23,17 +23,18 @@ public class MaiorMenorIgual {
 			g.drawImage(imgBarralho, 20, 200, 150, 210, this);
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		Mesa mesa = new Mesa();
 		JFrame janela = new JFrame("Previsao");
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setResizable(false);
-		janela.setSize(800, 6300);
+		janela.setSize(1000, 630);
 		janela.getContentPane().add(mesa);
 		janela.setLocationRelativeTo(null);
 		janela.setVisible(true);
-				
+		
+		/*
 		Barralho b = new Barralho();
 		b.baralhar();
 		Carta cartaActual, cartaSeguinte = null;
@@ -82,7 +83,7 @@ public class MaiorMenorIgual {
 				jogo=false;
 			}
 
-		} while (jogo);
+		} while (jogo);*/
 	}
 
 }
