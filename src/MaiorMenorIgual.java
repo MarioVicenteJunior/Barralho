@@ -29,7 +29,7 @@ public class MaiorMenorIgual {
 		JFrame janela = new JFrame("Previsao");
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setResizable(false);
-		janela.setSize(1000, 630);
+		janela.setSize(100, 630);
 		janela.getContentPane().add(mesa);
 		janela.setLocationRelativeTo(null);
 		janela.setVisible(true);
