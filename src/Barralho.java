@@ -21,7 +21,7 @@ public class Barralho {
 		}
 	}
 	/*
-	 * retira ujma carta do baralho.
+	 * retira uma carta do baralho.
 	 */
 	public Carta darCarta() {
 		Carta c=baralho[nCartas-1];
