@@ -24,7 +24,7 @@ import javax.swing.border.Border;
 public class PrevisaoGUI extends JPanel implements ActionListener {
 	
 	private static BufferedImage [][] imagens;
-	private static Barralho b;
+	static Barralho b;
 	private static Carta cartaActual = b.darCarta();
 	
 	private static class Mesa extends JPanel{
@@ -35,7 +35,7 @@ public class PrevisaoGUI extends JPanel implements ActionListener {
 			try {
 				imgMesa = ImageIO.read(new File("src/mesa.png"));
 				imgBarralho = ImageIO.read(new File("src/barralho.png"));
-				//imgCartaActual = ImageIO.read(new File("src/Baralho/12A.png"));
+				imgCartaActual = ImageIO.read(new File("src/Baralho/12A.png"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -56,7 +56,6 @@ public class PrevisaoGUI extends JPanel implements ActionListener {
 		private Font fonte;
 		private GestorEventos gestorEventos;
 		public Botao(String text, GestorEventos gestorEventos) {
-			// TODO Auto-generated constructor stub
 			super(text);
 			this.gestorEventos = gestorEventos;
 			fonte = new Font(Font.SERIF, Font.BOLD, 18);
@@ -114,12 +113,17 @@ public class PrevisaoGUI extends JPanel implements ActionListener {
 	}
 		
 	public static Image actual() {	
-		int x = cartaActual.getNaipeInt();
-		int y = cartaActual.getValorInt();
-		return imagens[x][y];
+		return imagens[0][1];
 	}
 	
 	public static void inicializarImagens() {
+		/*
+		 * Valores dos Naipes:
+		 * A = 0 = Arroz / Paus
+		 * C = 1 = Coracao ou Copas
+		 * E = 2 = Espada
+		 * O = 3 = Ouro
+		 * */
 	    String naipe = "ACEO";
 	    imagens = new BufferedImage[4][13];
 	    try {
