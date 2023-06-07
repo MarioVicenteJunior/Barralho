@@ -241,11 +241,11 @@ public class Carta {
 	public int getNaipeInt() {
 		if (NAIPE.toString().equalsIgnoreCase("JOKER")) {
 			return 0;
-		}else if (NAIPE.toString().equalsIgnoreCase("COPAS")) {
+		}else if (NAIPE.toString().equalsIgnoreCase("PAUS")) {//COPAS
 			return 1;
-		}else if (NAIPE.toString().equalsIgnoreCase("ESPADA")) {
+		}else if (NAIPE.toString().equalsIgnoreCase("COPAS")) {//ESPADA
 			return 2;
-		}else if (NAIPE.toString().equalsIgnoreCase("OURO")) {
+		}else if (NAIPE.toString().equalsIgnoreCase("ESPADA")) {//OURO	PAUS
 			return 3;
 		}else {
 			return 4;

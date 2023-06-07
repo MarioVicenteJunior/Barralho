@@ -26,7 +26,7 @@ public class TimerAnimationGUI2 {
 			i8=new ImageIcon("img\\c8-removebg-preview.png");
 			i9=new ImageIcon("img\\c9-removebg-preview.png");
 			i10=new ImageIcon("img\\c10-removebg-preview.png");
-			Timer t=new Timer(100, this);
+			Timer t=new Timer(50, this);
 			t.start();
 		}
 		
