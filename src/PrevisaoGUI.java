@@ -21,13 +21,13 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 
-public class PrevisaoGUI extends JPanel implements ActionListener {
+public class PrevisaoGUI extends JPanel {
 	
 	private static BufferedImage [][] imagens;
 	static Barralho b;
 	private static Carta cartaActual = b.darCarta();
 	
-	private static class Mesa extends JPanel{
+	private static class Mesa extends JPanel {
 		private Image imgMesa, imgBarralho, imgCartaActual, ImgCarta;
 		
 		protected void paintComponent(Graphics g) {
@@ -47,8 +47,15 @@ public class PrevisaoGUI extends JPanel implements ActionListener {
 	}
 	
 	public static class GestorEventos implements ActionListener{
+		public Mesa mesa;
+		
+		public GestorEventos(Mesa mesa){
+			this.mesa = mesa;
+		}
 		public void actionPerformed(ActionEvent e) {
-			
+			if (e.getActionCommand().equalsIgnoreCase("Maior")) {
+				
+			}
 		}
 	}
 	
@@ -142,14 +149,6 @@ public class PrevisaoGUI extends JPanel implements ActionListener {
 	private static void jogar() {
 			
 	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		
-		if (e.getActionCommand().equalsIgnoreCase("MENOR")) {
-			
-		}
-	}
 	
 	public PrevisaoGUI() {
 		b = new Barralho();
@@ -161,8 +160,8 @@ public class PrevisaoGUI extends JPanel implements ActionListener {
 		inicializarImagens();
 		Mesa mesa = new Mesa();		
 		JFrame janela = new JFrame("Previsao");
-		GestorEventos gestorEventos = new GestorEventos();
-		Botoes botoes = new Botoes();
+		GestorEventos gestorEventos = new GestorEventos(mesa);
+		Botoes botoes = new Botoes(gestorEventos);
 		Texto texto = new Texto(0);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setResizable(false);
